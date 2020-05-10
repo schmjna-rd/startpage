@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="normalize" type="text/css" href="normalize.css">
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+
+<script>
+	function startTime() {
+ 		var today = new Date();
+  		var h = today.getHours();
+  		var m = today.getMinutes();
+  		var s = today.getSeconds();
+
+  		if(h <= 9)
+            h = '0' + h;
+
+  		m = checkTime(m);
+  		s = checkTime(s);
+  		document.getElementById('time').innerHTML =
+  		h + ":" + m + ":" + s;
+  		var t = setTimeout(startTime, 500);
+	}
+
+	function checkTime(i) {
+  	if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  	return i;
+	}
+
+    function date() {
+        //Ab hier wird das Datum gebildet
+        var jetzt = new Date();
+        var tag = jetzt.getDate();
+        var monat = jetzt.getMonth() + 1;
+        if(monat <= 9)
+            monat = '0' + monat;
+        var jahr = jetzt.getYear();
+        if (jahr < 999)
+            jahr += 1900;
+        var tagZahl = jetzt.getDay();
+
+        wochentag = ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag' ];
+        
+        //Hier werden die Einzelteile zusammengesetzt
+        var zeit = wochentag[tagZahl] + ', ' + tag + '.' + monat + '.' + jahr;    
+        
+        document.getElementById('date').innerHTML = zeit;
+    }
+</script>
+
+<script src="https://code.iconify.design/1/1.0.5/iconify.min.js"></script>
+
+</head>
+<body onload="startTime(); date()">
+	<div class="wrapper">
+		<div id="row1" class="fixedflex">
+			
+				<div style="padding-top: 30px; text-align: center">
+					<div id="time" class="uhr"></div>
+					<div id="date" class="uhr"></div>
+					<div id="tag"></div>
+				</div>
+			<div class="searchrow">
+				<form class="search" action="https://www.google.com/search" method="get">
+					<input class="search-input" type="text" placeholder="Google" name="q" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="1">
+			<!--
+					<input type="submit" value="Search" class="is-hidden">
+			-->
+				</form>
+
+				<div class="dist-search">
+				</div>
+			<!--
+				<button class="search-clear search-clear button button-link" tabindex="1" disabled="">
+					<span class="icon-close"></span>
+				</button>
+			
+				<form name="searchbox" class="search" action="https://de.wikipedia.org/wiki/Special:Search" method="get">
+					<input class="search-input" type="text" placeholder="Wikipedia" name="q" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="1">
+				</form>
+
+			-->
+
+				<form action="https://de.wikipedia.org/wiki/w/index.php" class="search">
+            		<input class="search-input" type="text" placeholder="Wikipedia" name="search" title="Search Wikipedia [Alt+Umschalt+f]" accesskey="f" autocomplete="off">
+            	</form>
+
+				</div>
+			
+		</div>
+
+		<div id="row2" class="flexflex">
+			<div class="tilebox">
+				<div class="tilecolumn">				
+					<a href="https://calendar.google.com/calendar/r" class="tile">
+						<img class="svg" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Google_Calendar_icon.svg">
+					</a>
+
+					<a href="https://drive.google.com/drive/my-drive" class="tile">
+						<img class="svg" src="https://cdn.worldvectorlogo.com/logos/google-drive.svg">
+					</a>
+
+					<a href="https://keep.google.com/u/0/" class="tile">
+						<img class="svg keep" src="https://upload.wikimedia.org/wikipedia/commons/d/df/Google_Keep_icon.svg">
+					</a>
+
+					<a href="https://contacts.google.com/" class="tile">
+						<img class="svg" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Google_Contacts_icon.svg">
+					</a>
+
+					<a href="https://www.google.de/maps" class="tile">
+						<img class="svg" src="https://cdn.worldvectorlogo.com/logos/google-maps-2020-icon.svg">
+					</a>
+
+					<a href="https://mail.google.com/mail/u/0/#inbox" class="tile">
+						<img class="svg" src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Gmail_Icon.svg">
+					</a>
+<!--
+					<a href="" class="tile">
+
+					</a>
+-->
+				</div>
+
+				<div class="tilecolumn">
+					<a href="https://monday.com/" class="tile">
+						<img class="svg" src="https://cdn.worldvectorlogo.com/logos/monday-1.svg">
+					</a>
+
+					<a href="https://trello.com" class="tile">
+						<img class="svg" src="https://image.flaticon.com/icons/svg/2111/2111656.svg">
+					</a>
+
+				</div>
+
+				<div class="tilecolumn">
+
+					<a href="https://www.youtube.com/" class="tile">
+						<img class="svg" src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg">
+					</a>
+
+					<a href="https://www.twitch.tv/" class="tile">
+						<img class="svg" src="https://cdn.worldvectorlogo.com/logos/twitch-purple.svg">
+					</a>
+
+					<a href="https://www.amazon.de/gp/video/storefront/ref=topnav_storetab_atv?node=3010075031" class="tile">
+						<img class="svg" src="https://upload.wikimedia.org/wikipedia/commons/1/11/Amazon_Prime_Video_logo.svg">
+					</a>
+
+					<a href="https://www.netflix.com/browse" class="tile">
+						<img class="svg netflix" src="https://cdn.worldvectorlogo.com/logos/netflix-1.svg">
+					</a>
+
+					<a href="https://youtu.be/5qap5aO4i9A" class="tile">
+						<div class="text">CC</div>
+					</a>
+
+					<a href="https://www.youtube.com/user/AllTrapNation" class="tile">
+						<div class="text">TN</div>
+					</a>
+<!--
+
+-->
+				</div>
+
+				<div class="tilecolumn">
+					<a href="https://www.amazon.de/" class="tile">
+						<img class="svg" src="https://cdn.worldvectorlogo.com/logos/amazon-icon-1.svg">
+					</a>
+
+					<a href="https://www.paypal.com/de/home" class="tile">
+						<img class="svg" src="https://cdn.worldvectorlogo.com/logos/paypal-icon.svg">
+					</a>
+
+					<a href="https://www.deepl.com/translator" class="tile">
+						<div class="text">DL</div>
+					</a>
+
+				</div>
+
+				<div class="tilecolumn">
+					<a href="https://web.whatsapp.com/" class="tile">
+						<img class="svg" src="https://cdn.worldvectorlogo.com/logos/whatsapp-symbol.svg">
+					</a>
+
+					<a href="https://www.instagram.com/" class="tile">
+						<img class="svg" src="https://cdn.worldvectorlogo.com/logos/instagram-2-1.svg">
+					</a>
+
+					<a href="https://www.skillshare.com/home" class="tile">
+						<img class="svg" src="https://static.skillshare.com/assets/images/logo-header-2020.svg">
+					</a>
+<!--
+					<a href="https://www.wg-gesucht.de/" class="tile">
+						<div class="text wg">WG</div>
+					</a>
+-->
+
+				</div>
+				
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

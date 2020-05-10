@@ -1,0 +1,352 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	--text_color: #584b42;
+	--background_color: #f9f3ec;
+	--light_background: #f77754;
+
+
+	--text_color: #362e29;
+	--background_color: #f1f0ea;
+	--light_background: #f77754;
+
+
+
+	--transition-time: 0.2s;
+
+	--font-family: 'Josefin Sans', monospace;
+	font-weight: 700;
+
+/*
+	background-image: url("https://source.unsplash.com/collection/589374/1920x1080");
+	background-repeat: no-repeat;
+	background-size: cover;
+*/
+
+	background: var(--background_color);
+
+	font-family: var(--font-family);
+
+	font-size: 16px;
+	
+	color: var(--text_color);
+
+	margin: 0px;
+}
+
+#time{
+	font-size: 60px;
+}
+
+#row1{
+	max-height: 200px;
+}
+
+#row2 {
+	flex: 2;
+	display: flex;
+}
+
+
+
+.wrapper {
+/*
+	border-style: solid;
+	border-color: green;
+	border-width: 1px;
+*/
+	height: 100%;
+	width: 100%;
+
+	height: inherit;
+	width: inherit;
+
+	display: flex;
+
+	flex-direction: column;
+
+	align-content: space-around;
+
+}
+
+.fixedflex {
+	display: flex;
+	flex-direction: column;
+
+	flex-grow: 0;
+	flex-shrink: 0;
+
+	width: 100%;
+/*
+	border-style: solid;
+	border-color: white;
+	border-width: 1px;
+*/
+}
+
+.flexflex {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	align-content: flex-start;
+
+	flex: 1;
+	max-height: calc(100vh - 220px);
+/*
+	border-style: solid;
+	border-color: yellow;
+	border-width: 1px;
+*/
+}
+
+.uhr {
+	
+	margin: auto;
+	/*text-align: center;*/
+	width: 500px;
+}
+
+.searchrow {
+	display: flex;
+	flex-direction: row;
+
+	justify-content: center;
+}
+
+.dist-search {
+	width: 15%;
+}
+
+.search {
+	display: flex;
+	justify-content: center;
+
+	height: 32px;
+/*
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 0px;
+*/
+	width: 30%;
+}
+
+.search-input {
+	display: flex;
+	justify-content: center;
+
+	border-radius: 10px;
+	border-style: solid;
+	border-width: 4px;
+	border-color: black;
+
+	background: var(--light_background);
+
+	margin: auto;
+	width: 90%;
+	height: 90%;
+
+	font-family: var(--font-family);
+	font-size: 24px;
+
+	text-align: center;
+	vertical-align: middle;
+	color: var(--text_color);
+
+	transition: var(--transition-time);
+}
+
+.search-input:hover {
+	width:	100%;
+	height: 100%;
+	box-shadow: 0px 0px 1px 3px;
+}
+
+.tilebox {
+/*
+	border-style: solid;
+	border-color: red;
+	border-width:5px;
+*/
+	width: 80%;
+	height: 100%;
+
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+
+	justify-content: center;
+	align-items: flex-start;
+	align-content: flex-start;
+
+	flex-grow: 0;
+	flex-shrink: 0;
+}
+
+.tilecolumn {
+	display: flex;
+	flex-direction: column;
+
+	max-height: 100%;
+
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
+
+	flex-wrap: wrap;
+
+	flex-basis: 20%;
+	flex-grow: 2;
+	flex-shrink: 2;
+
+	margin: 20px;
+
+}
+
+.tile {
+	display: flex;
+/*
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+*/
+
+	margin: 10px;
+
+	width: 100px;
+	height: 100px;
+
+	color: var(--text_color);
+	text-decoration: none;
+
+	align-items: center;
+	text-align: center;
+	
+	justify-content: center;
+	vertical-align: middle;
+
+	border-radius: 50%;
+	border-style: solid;
+	border-width: 4px;
+
+	background: var(--light_background);
+/*
+	box-shadow: 0px 0px 0px 0px;
+*/
+	transition: var(--transition-time);
+
+}
+
+.tile:hover {
+/*
+	width: 160px;
+	height: 160px;
+*/	
+	box-shadow: 0px 0px 1px 3px;
+	width: 110px;
+	height: 110px;
+}
+
+.logo {
+	height: 60px;
+
+	display: flex;
+
+	align-items: center;
+	justify-content: center;
+}
+
+.link {
+	display: flex;
+
+	color: var(--text_color);
+	text-decoration: none;
+
+	height: 100%;
+
+	display: flex;
+
+	align-items: center;
+	justify-content: center;
+}
+
+.vignette {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	box-shadow: 0 0 50px black inset;
+}
+
+.iconify {
+	font-size: 60px;
+}
+
+.svg {
+	max-height: 70%;
+	max-width: 70%;
+
+	opacity: 0.85;
+}
+
+.text {
+	display: flex;
+
+	height: 70%;
+	width: 70%;
+
+	font-size: 56px;
+	font-family: 'Monoton', serif;
+	font-weight: 400;
+
+	justify-content: center;
+	align-items: center;
+}
+
+.netflix {
+	height: 60px;
+}
+
+.spotify {
+	color: #1DB954;
+}
+
+.amazonmusic {
+	color: #0077c1;
+}
+
+.keep {
+	height: 60%;
+	width: 60%;
+}
+
+.ilias {
+	font-size: 32px;
+}
+
+.untis {
+	font-size: 28px;
+}
+
+.wg {
+	font-size: 46px;
+}
+
+iframe {
+	
+}
+
+img {
+	display: flex;
+	justify-content: center;
+}
+
+/*
+footer {
+	position: fixed;
+	bottom: 0;
+}
+*/
